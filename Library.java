@@ -1,7 +1,4 @@
 
-//CREATE A PROGRAM FOR LIBRARY IN WHICh ADD BOOK,ISSUE BOOK ,RETURN BOOK FUNCTION ALSO THERE
-
-
 
 class Libraryy
 {
@@ -12,18 +9,22 @@ class Libraryy
      {
        books =new String[100];
      }
+     
 
-     public void addBooks(String book)
+     public void addBooks(String book)   //This method is used for adding books in library.
      {
          this.books[no_of_books++]=book;
      }
+     
 
      public void note()
      {
          System.out.println("NOTE : You can only issue one book at a time.");
 
      }
-     public void show_Available_Books()
+     
+     
+     public void show_Available_Books()          //This method is used to see the books in library.
      {
          System.out.println("Available Books are....");
          for (String book: books)
@@ -36,7 +37,9 @@ class Libraryy
 
          }
      }
-     public void issueBook(String book)
+     
+     
+     public void issueBook(String book)            //This method is used to take books from the library.
      {
          for (int i=0; i<this.books.length; i++)
          {
@@ -50,13 +53,16 @@ class Libraryy
          System.out.println("The "+book+" doesn't exists in the library.");
      }
 
-     public void return_book(String book)
+    
+     public void return_book(String book)                            //This method is used for ruturn the book
      {
-         System.out.println("++++++++++CURRENTLY+++++++++++");
+         System.out.println("********************CURRENTLY********************");
          this.books[no_of_books++]=book;
 
      }
 }
+
+
 public class  Library {
     public static void main(String[] args) {
           Libraryy l=new Libraryy();
@@ -72,11 +78,16 @@ public class  Library {
         l.addBooks("Hindi");
         l.show_Available_Books();
 
+        l.note();
         l.issueBook("Math");
         l.show_Available_Books();
 
         l.return_book("Math");
+          Date d=new Date();
+        System.out.println("At : "+d);        //This will print current time for you
         l.show_Available_Books();
 
     }
 }
+
+
